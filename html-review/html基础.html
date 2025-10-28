@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one</title>
+    <style>
+        .content {
+            display: flex;
+            align-items: center;
+        }
+
+        .one {
+            width: 200px;
+            height: 300px;
+            color: black;
+            background-color: skyblue;
+            border: 2px solid;
+            /* 开启 Flex 布局 */
+            display: flex;
+            /* 水平居中 */
+            justify-content: center;
+            /* 垂直居中 */
+            align-items: center;
+            /* 若内容是多行，设置为列布局 */
+            flex-direction: column;
+        }
+
+        .img {
+            height: 300px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="one">
+            <b>hello world</b>
+            <i> hello world</i>
+            <del>hello world</del>
+            <u>hello world</u>
+        </div>
+        <div>
+            <img src="/微信图片_20251028150748_15_2.jpg" alt="" class="img" title="第一张图">
+            <img src="/微信图片_20251028150749_16_2.jpg" alt="" class="img" title="第二张图">
+            <a href="https://www.chaoxing.com" target="_blank">超星学习通</a>
+        </div>
+        <div class="one">
+            <span>锚点链接</span>
+            <table>abc&nbsp;abc&nbsp;a&lt;b&nbsp;a&gt;b</table>
+        </div>
+    </div>
+</body>
+
+</html>
