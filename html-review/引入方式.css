@@ -1,0 +1,125 @@
+.one {
+    border: solid 2px;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    width: 200px;
+    height: 300px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 在这里开始练习复合选择器 */
+/* 1. 后代选择器练习：例如 .nav 下的所有 a 标签 */
+.article-list p {
+    border: solid 2px;
+    font-size: 20px;
+}
+
+/* 2. 子选择器练习：例如 .list > li */
+.nav>ul>li {
+    background-color: skyblue;
+    border: 2px solid;
+    margin: 3px;
+}
+
+/* 3. 并集选择器练习：例如 h1, .title */
+h1,
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn {
+  background-color: #4CAF50; /* 按钮绿色背景 */
+  color: white; /* 按钮文字白色 */
+  border-radius: 4px; /* 按钮圆角 */
+}
+
+.btn,
+footer a {
+    padding: 8px 16px;
+    /* 内边距：上下 8px，左右 16px */
+    text-decoration: none;
+    /* 去除链接下划线（针对 footer a） */
+    border: none;
+    /* 去除按钮默认边框（针对 .btn） */
+    display: inline-block;
+    /* 让链接也能正确显示内边距 */
+}
+/* 4. 链接伪类选择器练习：a:link, a:hover 等 */
+/* 未访问链接 */
+footer a:link {
+    color: #3366cc;
+    background-color: #f5f5f5;
+}
+
+/* 已访问链接 */
+footer a:visited {
+    color: #4CAF50;
+}
+
+/* 鼠标悬停时 */
+footer a:hover {
+    color: #ff6600;
+    /* 悬停橙色 */
+    background-color: #e0e0e0;
+    /* 悬停时背景加深 */
+}
+
+/* 鼠标点击未松开时（激活状态） */
+footer a:active {
+    color: #ff0000;
+    /* 点击红色 */
+    background-color: #cccccc;
+    /* 激活时背景更深 */
+}
+
+/* .nav a 的下划线控制 */
+/* 去除默认下划线 */
+.nav a {
+    text-decoration: none;
+    /* 取消所有状态的下划线 */
+    color: #333;
+    /* 默认文字颜色 */
+    padding: 5px 10px;
+    /* 增加点击区域 */
+}
+
+/* 悬停时显示下划线 */
+.nav a:hover {
+    text-decoration: underline;
+    /* 悬停时添加下划线 */
+    color: #0066cc;
+    /* 悬停时文字变蓝 */
+}
+
+
+/* 5. :focus 伪类练习：input:focus */
+input:focus {
+    border: 2px solid #4d90fe;
+    /* 焦点时蓝色边框 */
+    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+    /* 蓝色阴影 */
+    outline: none;
+    /* 去除浏览器默认焦点轮廓 */
+    background-color: #f9f9f9;
+    /* 焦点时背景色轻微变化 */
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS简介</title>
+    <link rel="stylesheet" href="/html-review/引入方式.css">
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <div class="one">CSS字体测试</div>
+    <div class="container">
+        <!-- 标题区域  -->
+        <h1>复合选择器练习页面</h1>
+        <p class="intro">请通过css复合选择器修改以下元素的样式</p>
+        <!-- 导航栏（适合练习后代/子选择器） -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li> <a href="#">课程</a>
+                    <ul class="subnav">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+
+        <!-- 文章列表（适合练习子选择器、并集选择器） -->
+        <div class="article-list">
+            <h2 class="title">最新文章</h2>
+            <div class="article-item">
+                <h3>后代选择器与子选择器的区别</h3>
+                <p>后代选择器选中所有层级的后代，子选择器只选中直接子元素...</p>
+            </div>
+        </div>
+        <!-- 表单（适合练习 :focus 伪类） -->
+        <form action="user-form">
+            <h2 class="form-group">用户登录</h2>
+            <div class="form-group">
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="text" id="password" name="password">
+            </div>
+            <button type="submit" class="btn">登录</button>
+            <button type="reset" class="btn">重置</button>
+        </form>
+        <!-- 底部链接（适合练习链接伪类） -->
+        <footer>
+            <a href="https://www.chaoxing.com" target="_blank">学习通</a>
+            <a href="https://www.baidu.com" target="_blank">百度</a>
+            <p>@ 2023 练习</p>
+        </footer>
+    </div>
+</body>
+
+</html>
