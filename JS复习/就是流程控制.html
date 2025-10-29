@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js流程控制</title>
+    <style>
+        /* 给 body 设置 flex 布局，让子元素居中 */
+        body {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: flex-start;
+            /* 垂直起始端对齐 */
+            min-height: 100vh;
+            /* 占满整个视口高度，确保垂直居中生效 */
+            margin: 0;
+            /* 清除默认边距 */
+        }
+
+        .content {
+            width: 300px;
+            /* height: 600px; */
+            background-color: #fff;
+            border: 2px solid;
+            display: flex;
+            flex-direction: column;
+            /*子元素垂直排列 */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .input-area {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h2>if流程控制</h2>
+        <div class="input-area">
+            <input type="number" id="score1" placeholder="请输入score1分数">
+            <input type="number" id="score2" placeholder="请输入score2分数">
+            <button onclick="compareScore()">比较分数</button>
+        </div>
+        <div id="result"></div>
+        <h2>猜数字小游戏</h2>
+        <div class="input-area">
+            <input type="number" id="num" placeholder="请输入num">
+            <button onclick="guessNumber()">点击猜一猜</button>
+        </div>
+         <div id="result1"></div>
+    </div>
+</body>
+
+<script>
+    function compareScore() {
+        let score1 = document.getElementById("score1").value;
+        let score2 = document.getElementById("score2").value;
+        let resultBox = document.getElementById("result");
+
+        resultBox.innerHTML = ""; // 清空之前的结果
+
+        if (score1 == score2) {
+            resultBox.innerHTML += "分数相等<br>"; // 简化文案，明确结果
+        } else if (score1 > score2) {
+            resultBox.innerHTML += "score1 > score2<br>"; // 明确比较关系
+        } else {
+            resultBox.innerHTML += "score1 < score2<br>"; // 明确比较关系
+        }
+        // 分数展示单独换行
+        resultBox.innerHTML += `score1的分数为：${score1}<br>`;
+        resultBox.innerHTML += `score2的分数为：${score2}<br>`;
+    }
+          // 猜数字游戏：全局声明随机数和猜测次数，确保状态持久化
+        let randomNum = Math.floor(Math.random() * 100) + 1;
+        let guessCount = 0;
+        function guessNumber() {
+            let numInput = document.getElementById("num").value;
+            let resultBox = document.getElementById("result1");
+            resultBox.innerHTML = "";
+
+            // 验证输入
+            if (numInput === "") {
+                resultBox.innerHTML = "请输入数字";
+                return;
+            }
+
+            let num = Number(numInput);
+            if (isNaN(num) || num < 1 || num > 100) {
+                resultBox.innerHTML = "请输入1-100之间的有效数字";
+                return;
+            }
+
+            // 猜测逻辑
+            guessCount++;
+            if (num < randomNum) {
+                resultBox.innerHTML = `猜小了！这是第${guessCount}次猜测`;
+            } else if (num > randomNum) {
+                resultBox.innerHTML = `猜大了！这是第${guessCount}次猜测`;
+            } else {
+                resultBox.innerHTML = `恭喜猜对了！答案是${randomNum}，共猜了${guessCount}次<br>点击按钮将重新开始游戏`;
+                // 猜对后重置游戏
+                randomNum = Math.floor(Math.random() * 100) + 1;
+                guessCount = 0;
+            }
+
+            // 清空输入框，方便下次输入
+            document.getElementById("num").value = "";
+        }
+</script>
+
+</html>
